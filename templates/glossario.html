@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!-- listagem de palavras -->
+  <!-- Blog preview section-->
+        <section class="py-5" id="glossario">
+            <div class="page-section portfolio" id="glossario">
+                <div class="container px-8" id="glossario">
+                    <!-- glossario Section Heading-->
+                    <h2 class="page-section-heading-2 text-center text-uppercase text-secondary mb-0" id="glossario">GLOSSARIO</h2>
+                        <!-- Icon Divider-->
+                        <h6 class="fs-4 page-section text-center masthead-subheading mb-0" id="glossario">Lista de Palavras:</h6>
+                    <div class="row gx-9">
+                        <!-- start -->
+                        {% for palavra, sinal in palavras_sinais %}
+                        <!-- mb-num é quem dá o espaco [padding] entre cada quadrado-->
+                        <div class="col-lg-6 mb-3">
+                            <div class="card h-100 shadow border-0">
+                                <video controls poster={{sinal.videoSinal}}>
+                                    <source src={{sinal.videoSinal.url}} type="video/mp4">
+                                        <object>
+                                            <embed src={{sinal.videoSinal.url}} type="application/x-shockwave-flash" 
+                                                    allowfullscreen="false" allowscriptaccess="always">  		
+                                        </object>
+                                        Formato não suportado  
+                                </video>
+                                <div class="card-body p-4">
+                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Disciplina</div>
+                                    <a class="text-decoration-none link-dark stretched-link" href=""><div class="h5 card-title mb-3">{{palavra.nomePalavra}}</div></a>
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line-glossario"></div>
+                                    </div>
+                                        <div class="h6 sub">
+                                            <small>Descrição da Palavra:</small>
+                                        </div>
+                                    <p>{{palavra.descPalavra}}<p/>
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line-glossario"></div>
+                                    </div>
+                                    <div class="h6 sub">
+                                            <small>Movimentação:</small>
+                                        </div>
+                                    <img class ="img-lista-palavras" src={{sinal.descSinalImagem.url}}  alt="img_movimento" />
+                                    <p>{{sinal.descSinalTexto}}</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <img class="rounded-circle me-3" src="{% static 'assets/img/icone-user-40-40.png' %}" alt="..." />
+                                            <div class="small">
+                                                <div class="h6 sub">
+                                                    <small>Usuario:</small>
+                                                    <p>
+                                                    {{palavra.loginUsuario}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- end-->
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- Adicionar palavras -->
+  <section class="page-section portfolio" id="glossario">
+            <div class="container">
+                <!-- glossario Grid Items - opcao 1-->
+                <div class="row justify-content-center" id="glossario">
+                    <!-- Icone adicionar palavra-->
+                    <div class="col-md-6 col-lg-4 mb-5"><a href="{% url 'palavras_new' %}">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal">
+                       <div class="border-item-portfolio">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{% static 'assets/img/logos/icon-adicionar.png' %}" alt="icone adicionar" />
+                            <h5 class="page-section text-center masthead-subheading mb-0">Adicionar Palavra</h5>
+                        </div>
+                        </div>
+                    </a></div>
+            </div>
+        </div>
+  </section>
+{% endblock %}
+
+

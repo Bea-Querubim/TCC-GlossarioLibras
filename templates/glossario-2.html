@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!-- listagem de palavras -->
+        <section class="py-5" id="glossario">
+            <div class="page-section portfolio" id="glossario">
+                <div class="container px-8" id="glossario">
+                    <!-- glossario Section Heading-->
+                    <h2 class="page-section-heading-2 text-center text-uppercase text-secondary mb-5" id="glossario">GLOSSARIO</h2>
+                    <!-- Search form -->
+                    <form id="pesquisa_index" class="container-fluid text-center .d-inline justify-content-center modal-footer active-cyan-4" method="POST" action="{% url 'home_search_palavras' %}">
+                        {% csrf_token %}
+                        <input class="container-sm form-control-lg mb-3" type="text" placeholder="Pesquise sua palavra aqui" aria-label="Search" name='pesquisaHome' id="pesquisaHome">
+    
+                        <button id="pesquisar-btn" class="btn btn-primary mb-3" data-bs-dismiss="modal" onclick=redirect("{% url 'home_search_palavras' %}"+{{pesquisaHome}})>
+                            <i class="fas fa-search"></i>Pesquisar
+                        </button>
+                    </form>
+                    
+                    {% if palavras_sinais %}
+                        <!-- Icon Divider-->
+                        <h6 class="fs-4 page-section text-center masthead-subheading mb-0" id="glossario">Lista de Palavras:</h6>
+                    <div class="row d-flex align-items-center ">
+                    <!-- start -->
+                    {% for palavra, sinal in palavras_sinais %}
+                        <div class="card-body col-md-8 shadow border-2 mb-6 " style="padding: 2rem;">
+                        <!-- Titulo -->
+                            <div class="row justify-content-center">
+                                <div class="badge bg-primary bg-gradient rounded-pill"> </div>
+                                <div class="h1 card-title">Palavra: {{palavra.nomePalavra}}</div></a>
+                            </div>
+                        <!-- Descrição -->
+                            <div class="row justify-content-center">
+                                <!-- texto-->
+                                <div class="row-col justify-item-center">
+                                    <div class="h3 sub"><small>Descrição da Palavra:</small></div>
+                                    <p style="font-size: 1.5rem;">{{palavra.descPalavra}}</p>
+                                </div>    
+                            </div>
+                        </div>
+                        <!--Button-->
+                        <div class ="col align-items-center justify-content-center modal-footer">
+                            <form id="listarPalavras" method="POST" action="{% url 'buscar_palavra_descricao' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="idPesquisaLista" id="idPesquisaLista" value="{{sinal.idSinal}}">
+
+                                <button class="btn btn-primary mb-3" data-bs-dismiss="modal" onclick=redirect("{% url 'buscar_palavra_descricao' %}"+{{idPesquisaLista}}) style="width: 10rem;  height: 10rem; padding:5px;" >Ver Palavra</button>
+                            </form>
+                        </div>
+                        <!-- Icon Divider-->
+                        <div class="divider-custom">
+                            <div class="divider-custom-line" style="height: 1px; width:10rem;"></div>
+                        </div>
+                    {% endfor %}
+                    <!-- end-->
+                    </div>
+                    {% else %}
+                        <h6 class="fs-4 page-section text-center masthead-subheading mb-0" id="glossario">Palavra não encontrada!</h6>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+        {% if request.session.usuario_autenticado %}
+<!-- Adicionar palavras -->
+  <section class="page-section portfolio" id="glossario">
+            <div class="container">
+                <!-- glossario Grid Items - opcao 1-->
+                <div class="row justify-content-center" id="glossario">
+                    <!-- Icone adicionar palavra-->
+                    <div class="col-md-6 col-lg-4 mb-5"><a href="{% url 'palavras_new' %}">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal">
+                       <div class="border-item-portfolio">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <div class="text-center align-items-center align-content-center" style="padding-top: 1.5rem">
+                                <img class="img-fluid" src="{% static 'assets/img/logos/icon-adicionar.png' %}" alt="icone adicionar" />
+                                <h5 class="page-section text-center masthead-subheading mb-0">Adicionar Palavra</h5>
+                            </div>
+                        </div>
+                        </div>
+                    </a></div>
+            </div>
+        </div>
+  </section>
+{% endif %}
+{% endblock %}
+
+

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- cadastro palavras -->
+        <section class="page-section cadastro" id="glossario">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- cadastro palavras-->
+                <div class="row justify-content-center">
+                    <p><h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Cadastre sua palavra</h2></p>
+                        <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        {{form.as_p}}
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        </form>
+        </section>
+{% endblock %}

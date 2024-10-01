@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+        <!-- Login Section-->
+        <section class="page-section bg-primary text-white mb-3" id="login">
+            <div class="page-section portfolio" id="login">
+                <div class="container px-8" id="login">
+                    <!-- glossario Section Heading-->
+                    <h2 class="page-section-heading-2 text-center text-uppercase text-secondary mb-3 text-white" id="login">Login/Sign</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+        </section>
+        <section class="py-2" id="login">
+        <div class="page-section portfolio" id="login">
+            <div class="container px-8" id="login">
+              <div class="container d-flex align-items-center flex-column">
+                <!-- Login-->
+                <div class="row justify-content-center">
+                    <p><h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">Login</h2></p><br>
+                    {% if request.session.usuario_autenticado %}
+                      <div class="row d-flex align-items-center ">
+                          <div class="card-body col-md-8 shadow border-2 mb-6">
+                            <div class="row justify-content-center text-secondary">
+                              <h2 class="text-center">Olá, {{ request.session.nome_usuario }}!</h2>
+                            <!-- Formulário para realizar logout -->
+                            <form method="post" action="{% url 'logout' %}" class="row justify-content-center form-control-lg mb-3">
+                                {% csrf_token %}
+                                <button class="btn btn-primary mb-3" type="submit">Sair</button>
+                            </form>
+                            </div>
+                          </div>
+                      </div>
+                    {% else %}
+                    <form method="POST" action="" class="col-form-label-lg">
+                      {%  csrf_token %}       
+                          <div class="row justify-content-center form-control-lg mb-3">
+                            <p>
+                              <label for="username">Usuario</label>
+                              <input type="text" class="form-control" name="loginUsuario" placeholder="Seu nome de usuario">
+                            </p>
+                            <p>
+                              <label for="exampleInputPassword1">Senha</label>
+                              <input type="password" class="form-control" name="senhaUsuario" placeholder="Senha">
+                            </div>
+                            </p>
+                          <p><button type="submit" class="btn btn-primary" style="padding-top: 1px;">Entrar</button></p>
+                          <div>
+                    </form>
+
+                <!-- mensagem de erro-->
+                {% if error_message %}
+                  <div class="row d-flex align-items-center ">
+                        <div class="card-body col-md-8 shadow border-2 mb-6" style="padding: 2rem; color: red; border: 1px solid red;">
+                            <div class="row justify-content-center">
+                                <div id="error-message"class="error-message">{{ error_message }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        // Adiciona um temporizador para esconder a mensagem após 2 minutos (120000 milissegundos)
+                        setTimeout(function() {
+                            var errorMessage = document.getElementById('error-message');
+                            if (errorMessage) {
+                                errorMessage.style.display = 'none';
+                            }
+                        }, 120000);
+                    </script>
+                {% endif %}
+
+                </div>
+                <!--end-->
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-center text-center mb-1 border-secondary border-1">
+              <p class="lead">Não possui cadastro? </p>
+              <a href="{% url 'sign' %}"><button class="btn btn-primary" style="background-color: #198754; border-color: #198754; ">Cadastrar</button></a>
+
+          </div>
+          {% endif %}  
+      </section> 
+{% endblock %}

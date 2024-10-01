@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!-- listagem de palavras -->
+    <section class="py-5" id="glossario">
+        <div class="page-section portfolio" id="glossario">
+            <div class="container px-8" id="glossario">
+            <!-- glossario Section Heading-->
+                <h2 class="page-section-heading-2 text-center text-uppercase text-secondary mb-0" id="glossario">GLOSSARIO</h2>
+                <div class="row gx-9">
+                {%  if palavra and sinal %}
+                    <!-- Titulo-->
+                    <div class="card-top p-4 pt-0 bg-transparent border-top-0">
+                            <div class="card-body p-2">
+                                <div class="badge bg-primary bg-gradient rounded-pill">Disciplina</div>
+                                <div class="h1 card-title">Palavra: {{palavra.nomePalavra}}</div>
+                        </div>
+                    </div>
+                    <!--VIDEO -->
+                    <div class="col-lg-7 mb-2">
+                        <div class="card h-100 shadow border-0">
+                            <video controls class= "custom-video" style="max-height:500px;"  poster={{sinal.videoSinal}}>
+                            <source src={{sinal.videoSinal.url}} type="video/mp4">
+                                <object>
+                                <embed src={{sinal.videoSinal.url}} type="application/x-shockwave-flash" allowfullscreen="false" allowscriptaccess="always">  		
+                                </object>
+                                Formato não suportado  
+                            </video>
+                        </div>
+                    </div>
+                    <!-- descricoes-->
+                    <div class="col-lg-5 mb-2">
+                        <!-- texto-->
+                        <div class="row card shadow border-1 mb-5 gx-3">
+                            <div class="h3 sub" style="padding: 1rem;"><small>Descrição da Palavra:</small></div>
+                            <p style="font-size: 1.5rem;">{{palavra.descPalavra}}</p>
+                        </div>
+                        <!-- sinal-->
+                        <div class="row card shadow border-1 mb-5 gx-3">
+                            <div class="h3 sub"style="padding: 1rem;"><small>Movimentação:</small></div>
+                                <div class="img-fluid">
+                                    <img class ="img-lista-palavras" src={{sinal.descSinalImagem.url}}  alt="img_movimento" />
+                                </div>
+                            <p style="font-size: 1.5rem;">{{sinal.descSinalTexto}}</p>
+                        </div>
+                    </div>
+                    <!-- usuario info -->
+                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <img class="rounded-circle me-3" src="{% static 'assets/img/icone-user-40-40.png' %}" alt="icone usuario" />
+                                <div class="small">
+                                    <div class="h6 sub"><small>Usuario:</small><p>{{palavra.loginUsuario}}</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                <h6 class="fs-4 page-section text-center masthead-subheading mb-0" id="glossario">Palavra não encontrada!</h6>                        
+                {% endif %}
+                <!-- end-->
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+

@@ -1,0 +1,329 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+      <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center" id="home">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="{% static 'assets/img/ADS-libras.png' %}" alt="ADS-Libras" />
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Termos tecnicos de tecnologia em Libras/Português</p>
+            </div>
+        </header>
+
+<!-- glossario Section-->
+        <section class="page-section portfolio" id="glossario">
+            <div class="container">
+                <!-- glossario Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" >Glossario</h2>
+
+                <h6 class="fs-4 page-section text-center masthead-subheading mb-0" >Busca por Palavras:</h6>
+                <div class="container-fluid .d-inline justify-content-center modal-footer">
+                    <!-- Search form -->
+                    <form id="pesquisa_index" class="container-fluid text-center .d-inline justify-content-center modal-footer active-cyan-4" method="POST" action="{% url 'home_search_palavras' %}">
+                        {% csrf_token %}
+                        <input class="container-sm form-control-lg mb-3" type="text" placeholder="Pesquise sua palavra aqui" aria-label="Search" name='pesquisaHome' id="pesquisaHome">
+    
+                        <button id="pesquisar-btn" class="btn btn-primary mb-3" data-bs-dismiss="modal" onclick=redirect("{% url 'home_search_palavras' %}"+{{pesquisaHome}})>
+                            <i class="fas fa-search"></i>Pesquisar
+                        </button>
+                    </form>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <!-- glossario Grid Items - opcao 1-->
+                <div class="row justify-content-center" >
+                <h6 class="fs-4 page-section text-center masthead-subheading mb-0">Busca por Disciplina:</h6>
+                </div>
+
+                <!-- glossario Grid Items - opcao 1-->
+                <div class="row justify-content-center align-items-center">
+                <!-- glossario Item 0- todas as pelavras-->
+                <div class="col-md-6 col-lg-4 mb-5"><a href="{% url 'palavras_list' %}">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal">
+                        <div class="border-item-portfolio">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <div class="text-center align-items-center align-content-center" style="padding-top: 1.5rem">
+                                <img class="img-fluid" src="{% static 'assets/img/logos/icon-listar-palavras.png' %}" style="height: 200px; width:200px;" alt="icone listar palavras" />
+                                <h5 class="page-section text-center masthead-subheading mb-0">Listar Todas as Palavras</h5>
+                            </div>
+                        </div>
+                    </div>
+                </a></div>
+
+                    <!-- glossario Item 1-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div class="border-item-portfolio">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <div class ="text-center align-items-center align-content-center">
+                                <img class="img-fluid" src= "{% static 'assets/img/banco-de-dados.png' %}" style="height: 200px; width:200px;" alt="icone banco de dados" />
+                                <h4 class="page-section text-center masthead-heading mb-0">Banco de Dados</h4>
+                            </div>    
+                        </div>
+                        </div>
+                    </div>
+                    <!-- glossario Item 2-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                          <div class="border-item-portfolio">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <div class ="text-center align-items-center align-content-center">
+                                <img class="img-fluid" src="{% static 'assets/img/programacao.png' %}" style="height: 200px; width:200px;" alt="icone programação" />
+                                <h4 class="page-section text-center masthead-heading mb-0">Programação</h4>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- glossario Item 3-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                            <div class="border-item-portfolio">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <div class ="text-center align-items-center align-content-center">
+                                <img class="img-fluid" src="{% static 'assets/img/desenvolvimento-web.png' %}" style="height: 200px; width:200px;" alt="icone desenvolvimento web" />
+                                <h4 class="page-section text-center masthead-heading mb-0">Desenvolvimento Web</h4>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- glossario Item 4-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                        <div class="border-item-portfolio">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <div class ="text-center align-items-center align-content-center">
+                                <img class="img-fluid" src="{% static 'assets/img/programacao-orientada-objs.png' %}" style="height: 200px; width:200px;" alt="icone programacao orientada a objetos" />
+                                <h4 class="page-section text-center masthead-heading mb-0">Programação Orientada a Objetos</h4>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+            </div>
+        </section>
+
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-5" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">Sobre nós</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 ms-auto"><p class="lead">
+                            <a href="https://bra.ifsp.edu.br/"><img class="class fluid" src="{% static 'images/ifsp-logo-bra.jpg' %}" alt="IFSP-Bragança"/></a>
+                        </p>
+                        </div> 
+                        <div class="col-lg-6 ms-auto justify-content-center "><p class="lead">Somos estudantes do Intuto Federal do Campus de Bragança Paulista.<br> Com o intuito de ajudar a pessoas com deficiencia auditiva, na área de informatica, promovemos este projeto para auxiliar em conjunto com estudos da graduação, a disseminação de termos tecnicos emportuguês-libras.<br> Primeiramente esse projeto engloba apenas termos da area de Analise e Desenvolvimento de sistemas, porém o intuito é expandir para todos os termos das graduacões atuais do campus.</p>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+
+        <!-- Contact Section-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contate-nos</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Contact Form-->
+                <div class="row justify-content-center">
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <label for="name">Nome completo</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">Por favor digite seu nome.</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <label for="email">Email</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">Por favor digite um Email.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email invalido.</div>
+                            </div>
+                            <!-- Message input-->
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text" placeholder="Entre com sua mensagem..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <label for="message">Message</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">Por favor digite sua mensagem.</div>
+                            </div>
+                            <!-- Submit success message-->
+
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Email enviado com sucesso!</div>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Erro ao enviar o e-mail. Tente novamente!</div></div>
+                            <!-- Submit Button-->
+                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endblock %}
+    {% block modal %}
+    <!-- glossario Modals-->
+        <!-- glossario Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- glossario Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Banco de Dados</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- glossario Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="{% static 'assets/img/logos/icon-banco-de-dados.png' %}" alt="..." />
+                                    <!-- glossario Modal - Text-->
+                                    <p class="fs-4 mb-4">Bancos de dados ou bases de dados são conjuntos de arquivos relacionados entre si, podendo conter registros sobre pessoas, lugares ou informações em geral. São coleções organizadas de dados que se relacionam ou não, de forma a armazenar informações.</p>
+                                    <a href="{% url 'palavras_list' %}"><button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Ver Palavras
+                                    </button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- glossario Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- glossario Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Programação</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- glossario Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="{% static 'assets/img/logos/icon-programacao.png' %}" alt="..." />
+                                    <!-- glossario Modal - Text-->
+                                    <p class="fs-4 mb-4">Programação é o processo de escrita, teste e manutenção de um programa de computador. O programa é escrito em uma linguagem de programação, embora seja possível, com alguma dificuldade, o escrever diretamente em linguagem de máquina. Diferentes partes de um programa podem ser escritas em diferentes linguagens.</p>
+                                    <a href="{% url 'palavras_list' %}"><button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Ver Palavras
+                                    </button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- glossario Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- glossario Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Desenvolvimento Web</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- glossario Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="{% static 'assets/img/logos/icon-desenv-web.png' %}" alt="..." />
+                                    <!-- glossario Modal - Text-->
+                                    <p class="fs-4 mb-4">Desenvolvimento web é o termo utilizado para descrever o desenvolvimento de sites, na Internet ou numa intranet.</p>
+                                    <a href="{% url 'palavras_list' %}"><button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Ver Palavras
+                                    </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- glossario Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- glossario Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Programação Orientada a Objetos</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- glossario Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="{% static 'assets/img/logos/icon-poo.png' %}" alt="..." />
+                                    <!-- glossario Modal - Text-->
+                                    <p class="fs-4 mb-4">Programação orientada a objetos é um paradigma de programação baseado no conceito de "objetos", que podem conter dados na forma de campos, também conhecidos como atributos, e códigos, na forma de procedimentos, também conhecidos como métodos.</p>
+                                    <a href="{% url 'palavras_list' %}"><button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Ver Palavras
+                                    </button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+
