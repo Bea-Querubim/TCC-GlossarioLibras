@@ -40,7 +40,7 @@ O glossário de termos técnicos em Libras será uma ferramenta importante para 
 ## Tecnologias Utilizadas
 
 - Figma
-- Wobentch
+- Workbench
 - SQL Client
 - Python
 - Django
