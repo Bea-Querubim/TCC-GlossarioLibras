@@ -1,9 +1,9 @@
 # ADS Libras
 
 **Feito pelos alunos:**
-- Beatriz Querubim Batista
-- Caroline Smarzaro
-- Gustavo Pinto da Silva
+- [Beatriz Querubim Batista](https://www.linkedin.com/in/beatriz-querubim-943840217/)
+- [Caroline Smarzaro](https://www.linkedin.com/in/carolinesmarzaro/)
+- [Gustavo Pinto da Silva]()
 
 **Instituto Federal de Educação, Ciência e Tecnologia de São Paulo**  
 Câmpus Bragança Paulista
@@ -16,10 +16,11 @@ O projeto **ADS Libras** é um glossário de termos técnicos do curso de Tecnol
 
 Gostaríamos de agradecer a todas as pessoas que, de uma forma ou de outra, colaboraram para que este trabalho fosse realizado. Em especial:
 
-- **Professor Rafael da Silva Muniz**: por sua compreensão, competência e orientação durante todo o desenvolvimento desta monografia.
-- **Profª Talita de Paula Cypriano de Souza**: pela coorientação.
-- **Letícia Leite Batista Nascimento**: tradutora e intérprete de Libras, pela colaboração e atenção.
-- Nossos **pais, familiares e amigos**, com ênfase aos pais, Lilian Maria Pinto da Silva e José Ilzan Cavalcante Damasceno, e ao amigo Paulo Basalces, pelo suporte e apoio.
+- [**Professor Rafael da Silva Muniz**](https://www.linkedin.com/in/rafael-muniz-57949456/): por sua compreensão, competência e orientação durante todo o desenvolvimento desta monografia.
+- [**Profª Talita de Paula Cypriano de Souza**](https://www.linkedin.com/in/talita-cypriano/): pela coorientação.
+- [**Profa. Dra. Ana Paula Müller Giancoli**](https://www.linkedin.com/in/ana-paula-müller-giancoli/) Ao apoio nas orientações do projeto e documentações. 
+- [**Letícia Leite Batista Nascimento**](https://www.linkedin.com/in/leticia-leite-batista-nascimento-37896a323/): tradutora e intérprete de Libras, pela colaboração e atenção.
+- Nossos **pais, familiares e amigos**, com ênfase aos pais, Lilian Maria Pinto da Silva e José Ilzan Cavalcante Damasceno, e ao amigo [Paulo Basalces](https://www.linkedin.com/in/basalces/), pelo suporte e apoio.
 
 ### Importância do Projeto
 
@@ -35,7 +36,6 @@ O glossário de termos técnicos em Libras será uma ferramenta importante para 
 - [Instruções para Instalação](#instruções-para-instalação)
 - [Instruções para quem baixar o projeto](#instruções-para-quem-baixar-o-projeto)
 - [Contribuição](#contribuição)
-- [Licença](#licença)
 
 ## Tecnologias Utilizadas
 
@@ -46,7 +46,7 @@ O glossário de termos técnicos em Libras será uma ferramenta importante para 
 - Django
 - HTML
 - CSS
-- Ovelief (para documentação)
+- overleaf (para documentação)
 
 ## Instruções para Instalação
 
