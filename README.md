@@ -16,11 +16,12 @@ O projeto **ADS Libras** é um glossário de termos técnicos do curso de Tecnol
 
 Gostaríamos de agradecer a todas as pessoas que, de uma forma ou de outra, colaboraram para que este trabalho fosse realizado. Em especial:
 
-- [**Professor Rafael da Silva Muniz**](https://www.linkedin.com/in/rafael-muniz-57949456/): por sua compreensão, competência e orientação durante todo o desenvolvimento desta monografia.
+- [**Prof. Rafael da Silva Muniz**](https://www.linkedin.com/in/rafael-muniz-57949456/): por sua compreensão, competência e orientação durante todo o desenvolvimento desta monografia.
 - [**Profª Talita de Paula Cypriano de Souza**](https://www.linkedin.com/in/talita-cypriano/): pela coorientação.
-- [**Profa. Dra. Ana Paula Müller Giancoli**](https://www.linkedin.com/in/ana-paula-müller-giancoli/) Ao apoio nas orientações do projeto e documentações. 
+- [**Profª Dra. Ana Paula Müller Giancoli**](https://www.linkedin.com/in/ana-paula-müller-giancoli/) Ao apoio nas orientações do projeto e documentações. 
 - [**Letícia Leite Batista Nascimento**](https://www.linkedin.com/in/leticia-leite-batista-nascimento-37896a323/): tradutora e intérprete de Libras, pela colaboração e atenção.
 - Nossos **pais, familiares e amigos**, com ênfase aos pais, Lilian Maria Pinto da Silva e José Ilzan Cavalcante Damasceno, e ao amigo [Paulo Basalces](https://www.linkedin.com/in/basalces/), pelo suporte e apoio.
+- Aos professores da banca, [**Profª Eliane Androilli**](https://www.linkedin.com/in/eliane-andreoli-6540951b) e [**Prof. Flavio César Amate**](https://www.linkedin.com/in/flavioamate) que apoiaram o nosso projeto e com suas analises levantaram pontos de melhoria, visando a melhor aplicação do nosso projeto.
 
 ### Importância do Projeto
 
